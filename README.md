@@ -18,16 +18,16 @@ Windows 7 & 8.1 & 10
 * Pygame 1.9.3 (not tested with older versions)
 
 	`pip install pygame`
-    
+
     [Pygame Installation Instructions](https://www.pygame.org/wiki/GettingStarted)
 
 ### Install and Run
 1. Download the [repository](https://github.com/Kairn/laser-bees-new) as a .zip file or using git clone.
-2. Extract the .zip file to a new folder.
-3. Open the directory that contains the game files and double click *laser_bees.py*.
+2. Extract the .zip file.
+3. Open the game directory (laser-bees-master) and double click *laser_bees.py*.
 
 	Alternatively, open a terminal in the game directory and run the following command:
-    
+
     `python laser_bees.py`
 
 ## How to Play
