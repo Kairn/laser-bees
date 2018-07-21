@@ -8,7 +8,7 @@
 # RUN ON A WINDOWS PLATFORM.
 #
 # RUN COMMAND: python Laser_Bees.py
-# 
+#
 
 import sys
 
@@ -26,7 +26,7 @@ def run_game():
     game_clock = pygame.time.Clock()
 
     in_game_state = False
-    game_settings = settings.Settings(debug=True)      # change this to True to enable cheat mode.
+    game_settings = settings.Settings(debug=False)      # change this to True to enable cheat mode.
     game_screen = pygame.display.set_mode(game_settings.window_size)
 
     start_bg = pygame.image.load('images/screen_images/start_screen.jpg')
