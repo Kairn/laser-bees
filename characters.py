@@ -1,7 +1,7 @@
 # characters.py #
 # ============================================================================
 # DEFINE ALL IN-GAME OBJECT TYPES.
-# THEY NEED SPRITE FILES IN THE GRAPHICS FOLDER TO INITIALIZE PROPERLY.
+# THEY NEED SPRITE FILES IN THE IMAGES FOLDER TO INITIALIZE PROPERLY.
 #
 
 import pygame
@@ -23,9 +23,9 @@ class PlayerShip(pygame.sprite.Sprite):
         self.turret_cooldown = 0
         self.invincible_timer = 0
 
-        self.ship_img = pygame.image.load('graphics/playership.png')
-        self.ship_inv_img = pygame.image.load('graphics/playership_inv.png')
-        self.turret_img = pygame.image.load('graphics/turret.png')
+        self.ship_img = pygame.image.load('images/objects/battlers/player_ship.png')
+        self.ship_inv_img = pygame.image.load('images/objects/battlers/player_ship_inv.png')
+        self.turret_img = pygame.image.load('images/objects/battlers/turret.png')
         self.rect = self.ship_img.get_rect()
         self.turret_1_rect = self.turret_img.get_rect()
         self.turret_2_rect = self.turret_img.get_rect()
@@ -90,11 +90,11 @@ class PlayerAmmo(pygame.sprite.Sprite):
     """Define all ammo types fired from the main ship."""
 
     # load ammo sprites.
-    ammo_std = pygame.image.load('graphics/ammo_1.png')
-    ammo_big1 = pygame.image.load('graphics/ammo_2.png')
-    ammo_big2 = pygame.image.load('graphics/ammo_3.png')
-    ammo_big3 = pygame.image.load('graphics/ammo_4.png')
-    ammo_super = pygame.image.load('graphics/ammo_5.png')
+    ammo_std = pygame.image.load('images/objects/projectiles/ammo_1.png')
+    ammo_big1 = pygame.image.load('images/objects/projectiles/ammo_2.png')
+    ammo_big2 = pygame.image.load('images/objects/projectiles/ammo_3.png')
+    ammo_big3 = pygame.image.load('images/objects/projectiles/ammo_4.png')
+    ammo_super = pygame.image.load('images/objects/projectiles/ammo_5.png')
 
     def __init__(self, playership, source=0, pos=0):
         super().__init__()
@@ -168,11 +168,11 @@ class PlayerAmmo(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     """Define all enemy ship types and the upgrade pack."""
 
-    typeA = pygame.image.load('graphics/enemy_1.png')
-    typeB = pygame.image.load('graphics/enemy_2.png')
-    typeC = pygame.image.load('graphics/enemy_3.png')
-    typeD = pygame.image.load('graphics/enemy_4.png')
-    upgrade_pack = pygame.image.load('graphics/upgrade_pack.png')
+    typeA = pygame.image.load('images/objects/battlers/enemy_a.png')
+    typeB = pygame.image.load('images/objects/battlers/enemy_b.png')
+    typeC = pygame.image.load('images/objects/battlers/enemy_c.png')
+    typeD = pygame.image.load('images/objects/battlers/enemy_d.png')
+    upgrade_pack = pygame.image.load('images/objects/battlers/treasure_chest.png')
 
     def __init__(self, screen, type):
         super().__init__()
@@ -270,12 +270,12 @@ class Enemy(pygame.sprite.Sprite):
 class EnemyAmmo(pygame.sprite.Sprite):
     """Define all ammo types fired from enemy ships and the upgrade star."""
 
-    silver_bolt = pygame.image.load('graphics/ammo_!1.png')
-    fire_blast = pygame.image.load('graphics/ammo_!2.png')
-    mana_blast = pygame.image.load('graphics/ammo_!3.png')
-    bounce_ball = pygame.image.load('graphics/ammo_!4.png')
-    laser_bolt = pygame.image.load('graphics/ammo_!5.png')
-    booster = pygame.image.load('graphics/booster.png')
+    silver_bolt = pygame.image.load('images/objects/projectiles/ammo_a.png')
+    fire_blast = pygame.image.load('images/objects/projectiles/ammo_b.png')
+    mana_blast = pygame.image.load('images/objects/projectiles/ammo_c.png')
+    bounce_ball = pygame.image.load('images/objects/projectiles/ammo_d_1.png')
+    laser_bolt = pygame.image.load('images/objects/projectiles/ammo_d_2.png')
+    booster = pygame.image.load('images/objects/projectiles/star.png')
 
     def __init__(self, screen, enemy, kind=1, pos=1):
         super().__init__()

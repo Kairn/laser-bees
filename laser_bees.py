@@ -8,7 +8,7 @@
 # RUN ON A WINDOWS PLATFORM.
 #
 # RUN COMMAND: python Laser_Bees.py
-# test
+# 
 
 import sys
 
@@ -19,7 +19,7 @@ from in_game_loop import in_game
 
 
 def run_game():
-    """Load data, set up game environment, and launch the main event loop."""
+    """Load data, set up the game environment, and launch the main event loop."""
 
     pygame.init()
     pygame.display.set_caption("Laser Bees")
@@ -29,7 +29,7 @@ def run_game():
     game_settings = settings.Settings(debug=True)      # change this to True to enable cheat mode.
     game_screen = pygame.display.set_mode(game_settings.window_size)
 
-    start_bg = pygame.image.load('graphics/start_screen.jpg')
+    start_bg = pygame.image.load('images/screen_images/start_screen.jpg')
 
     while True:                                         # the main game loop.
 

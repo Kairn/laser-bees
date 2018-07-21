@@ -1,4 +1,4 @@
-# update_units.py #
+# update_manager.py #
 # ============================================================================
 # DEFINE FUNCTIONS FOR UPDATING THE STATUS OF ALL IN-GAME OBJECTS FOR THE
 # GAME TO DRAW THEM PROPERLY ON THE SCREEN FOR EACH FRAME.

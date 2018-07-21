@@ -6,8 +6,8 @@
 # GAME STAGES ARE ALSO DEFINED IN THIS MODULE, AND THEY CAN BE MODIFIED TO
 # CHANGE THE DIFFICULTY OF THE GAME.
 #
-# SOME BACKGROUND IMAGES NEED TO BE LOADED FROM THE GRAPHICS FOLDER.
-#
+# SCREEN BACKGROUND IMAGES NEED TO BE LOADED FROM THE IMAGES FOLDER.
+# 
 
 import sys
 import time
@@ -15,7 +15,7 @@ from collections import namedtuple
 
 import pygame
 
-import update_units
+import update_manager
 import characters
 from stage_manager import stage_check
 import collision_manager
@@ -26,13 +26,13 @@ def in_game(clock, settings, screen, active=True):
 
     debug = settings.debug_mode
 
-    win_bg = pygame.image.load('graphics/winner.jpg')
-    loss_bg = pygame.image.load('graphics/gameover.jpg')
+    win_bg = pygame.image.load('images/screen_images/victory_screen.jpg')
+    loss_bg = pygame.image.load('images/screen_images/game_over_screen.jpg')
 
     # set up game stages.
-    stage_imgs = [pygame.image.load('graphics/stage_1.jpg'),
-                  pygame.image.load('graphics/stage_2.jpg'),
-                  pygame.image.load('graphics/stage_3.jpg')]
+    stage_imgs = [pygame.image.load('images/backgrounds/stage_1.jpg'),
+                  pygame.image.load('images/backgrounds/stage_2.jpg'),
+                  pygame.image.load('images/backgrounds/stage_3.jpg')]
 
     Stage = namedtuple('stage', 'id A B C D upgrade')
     game_stages = iter(
@@ -122,12 +122,12 @@ def in_game(clock, settings, screen, active=True):
         # update in-game objects.
         win_check = stage_check(screen, game_playerammos, game_enemies,
                                 game_enemyammos, game_stages, stage_imgs)
-        loss_check = update_units.update_playership(screen, game_playership,
+        loss_check = update_manager.update_playership(screen, game_playership,
                                                     key_actions)
-        update_units.update_enemies(screen, game_enemies, key_actions)
-        update_units.update_player_ammo(screen, game_playership,
+        update_manager.update_enemies(screen, game_enemies, key_actions)
+        update_manager.update_player_ammo(screen, game_playership,
                                         game_playerammos, key_actions)
-        update_units.update_enemy_ammo(screen, game_enemies, game_enemyammos)
+        update_manager.update_enemy_ammo(screen, game_enemies, game_enemyammos)
 
         # check collisions.
         collision_manager.offensive_check(game_playerammos, game_enemies)
